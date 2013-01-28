@@ -10,35 +10,29 @@ def bash input
 	return out
 end
 
-file = File.open(ARGV[0], "rb")
-diary = file.read
-file.close
+diary = bash "cat #{ARGV[0]} | markdown"
 entry_points = diary.scan /Date\s[a-zA-Z]+\s\d+\s[a-zA-Z]+\s\d{4}/
 table_of_contents = "<div id=\"table\" style=\"position: fixed; right: 100px; top: 50px; display: block;\">"
-table_of_contents += "\<h5>Table of Contents:</h5>\n<ol>"
+table_of_contents += "\<h5>Table of Contents:</h5>\n"
 count = 0
-table_of_contents += "<div class=\"listgroup\" id=\"group#{count}\">"
+table_of_contents += "<ol class=\"listgroup\" id=\"group#{count}\">"
 entry_points.each do |e|
 	diary = diary.gsub(e," <a name=\"#{e.gsub(/\s/,"")}\"></a>"+e)
 	table_of_contents += "<li><a href=\"##{e.gsub(/\s/,"")}\">#{e}</a></li>\n"
 	count += 1
 	if(count % 15 == 0)
-		table_of_contents += "</div><div class=\"listgroup\" style=\"display:none\" id=\"group#{count/15}\">"
+		table_of_contents += "</ol><ol class=\"listgroup\" style=\"display:none\" id=\"group#{count/15}\">"
 	end
 end
-table_of_contents += "</div></ol><center><h5><a title=\"Previous Group(Ctrl-Left)\" "
+table_of_contents += "</ol><center><h5><a title=\"Previous Group(Ctrl-Left)\" "
 table_of_contents += "onclick=\"changeGroup(false);\" style=\"cursor: pointer;\"><</a>"
 table_of_contents += " <span id=\"gnum\">0</span> <a title=\"Next Group(Ctrl-Right)\" "
 table_of_contents += "onclick=\"changeGroup(true);\"  style=\"cursor: pointer;\">></a></h5></center></div>"
 file = File.open("validated html", "rb")
-diary = file.read + table_of_contents + diary
-diary << "</body>\n</html>"
+valid = file.read
 file.close
-File.open('temp_diary', 'w') do |f1|  
-  f1.puts diary
-end 
-bash "cat temp_diary | markdown > Diary.html"
-bash "rm temp_diary"
+out = valid + table_of_contents + diary + "</body>\n</html>"
+puts out
 #bash "scp Diary.html user@server:~/"
 #File.open('move_diary.sh', 'w') do |f1|  
 #  f1.puts "mv Diary.html public_html/"
