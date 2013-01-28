@@ -15,6 +15,7 @@
 	}
 </style>
 <div id="show-hide" onclick="toggleTableOfContents();" title="Ctrl-H"><h5>Hide</h5></div>
+table_of_contents
 ## 4th Year Project Diary
 
 ### Date Tues 1 Jan 2013
