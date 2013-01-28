@@ -17,7 +17,7 @@ To whatever you what it to match too.
 
 When you what the html version just run.
 
-	ruby diary_indexer.rb Example.md
+	ruby diary_indexer.rb Example.md > Diary.html
 
 ### Example:
 
