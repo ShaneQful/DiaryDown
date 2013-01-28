@@ -1,3 +1,21 @@
+<link href="markdown.css" rel="stylesheet"></link>
+<script src="jquery.min.js"></script>
+<script src="diary.js"></script>
+<style>
+	#show-hide {
+	position: fixed;
+	right: 300px;
+	top: 150px;
+	cursor:pointer;
+	transform: rotate(270deg);
+	-ms-transform: rotate(270deg);
+	-webkit-transform: rotate(270deg);
+	-o-transform: rotate(270deg);
+	-moz-transform: rotate(270deg);
+	}
+</style>
+<div id="show-hide" onclick="toggleTableOfContents();" title="Ctrl-H"><h5>Hide</h5></div>
+## 4th Year Project Diary
 
 ### Date Tues 1 Jan 2013
 
