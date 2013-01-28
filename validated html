@@ -1,0 +1,35 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+<meta name="generator" content="HTML Tidy for Linux (vers 25 March 2009), see www.w3.org">
+<link href="markdown.css" rel="stylesheet" type="text/css">
+<style type="text/css">
+    #show-hide {
+    position: fixed;
+    right: 300px;
+    top: 150px;
+    cursor:pointer;
+    transform: rotate(270deg);
+    -ms-transform: rotate(270deg);
+    -webkit-transform: rotate(270deg);
+    -o-transform: rotate(270deg);
+    -moz-transform: rotate(270deg);
+    }
+</style>
+<title></title>
+
+<style type="text/css">
+ div.c5 {position: fixed; right: 100px; top: 50px; display: block;}
+ div.c4 {text-align: center}
+ a.c3 {cursor: pointer;}
+ div.c2 {margin-left: 2em}
+ div.c1 {display:none}
+</style>
+</head>
+<body>
+<script src="jquery.min.js" type="text/javascript">
+</script><script src="diary.js" type="text/javascript">
+</script>
+<div id="show-hide" onclick="toggleTableOfContents();" title="Ctrl-H">
+<h5>Hide</h5>
+</div>

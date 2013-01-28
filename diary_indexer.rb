@@ -11,10 +11,7 @@ def bash input
 end
 
 file = File.open(ARGV[0], "rb")
-diary = ""
-file.readlines.each do |l|
-	diary += l
-end
+diary = file.read
 file.close
 entry_points = diary.scan /Date\s[a-zA-Z]+\s\d+\s[a-zA-Z]+\s\d{4}/
 table_of_contents = "<div id=\"table\" style=\"position: fixed; right: 100px; top: 50px; display: block;\">"
@@ -33,7 +30,10 @@ table_of_contents += "</div></ol><center><h5><a title=\"Previous Group(Ctrl-Left
 table_of_contents += "onclick=\"changeGroup(false);\" style=\"cursor: pointer;\"><</a>"
 table_of_contents += " <span id=\"gnum\">0</span> <a title=\"Next Group(Ctrl-Right)\" "
 table_of_contents += "onclick=\"changeGroup(true);\"  style=\"cursor: pointer;\">></a></h5></center></div>"
-diary['table_of_contents'] = table_of_contents
+file = File.open("validated html", "rb")
+diary = file.read + table_of_contents + diary
+diary << "</body>\n</html>"
+file.close
 File.open('temp_diary', 'w') do |f1|  
   f1.puts diary
 end 
