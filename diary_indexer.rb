@@ -39,12 +39,12 @@ File.open('temp_diary', 'w') do |f1|
 end 
 bash "cat temp_diary | markdown > Diary.html"
 bash "rm temp_diary"
-bash "scp Diary.html user@server:~/"
-File.open('move_diary.sh', 'w') do |f1|  
-  f1.puts "mv Diary.html public_html/"
-	f1.puts "chmod 444 public_html/Diary.html"
-end 
-bash "cat move_diary.sh | ssh user@server bash -s"
-bash "git add Diary.html Diary.md"
-bash "git commit -m \"#{ARGV[1]}\""
-bash "git push origin"
+#bash "scp Diary.html user@server:~/"
+#File.open('move_diary.sh', 'w') do |f1|  
+#  f1.puts "mv Diary.html public_html/"
+#	f1.puts "chmod 444 public_html/Diary.html"
+#end 
+#bash "cat move_diary.sh | ssh user@server bash -s"
+#bash "git add Diary.html Diary.md"
+#bash "git commit -m \"#{ARGV[1]}\""
+#bash "git push origin"
