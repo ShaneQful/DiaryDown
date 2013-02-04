@@ -1,3 +1,9 @@
+/* Copyright (c) 2013 Shane Quigley
+ *
+ *  This software is MIT licensed see link for details
+ *  http://www.opensource.org/licenses/MIT
+ */
+
 var userHide, isCtrl;
 userHide = false;
 function toggleTableOfContents() {
