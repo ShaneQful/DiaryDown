@@ -31,7 +31,7 @@ Then change the user@server to the appropriate user & server's for you. You'll n
 
 ### Example:
 
-An example diary written with this tool can be seen [here](http://shaneqful.github.com).
+An example diary written with this tool can be seen [here](http://shaneqful.github.io/DiaryDown/).
 
 ### License
 
